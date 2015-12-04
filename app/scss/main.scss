@@ -1,0 +1,341 @@
+@import "compass/css3";
+@import "normalize-version";
+@import "normalize/base";
+@import "normalize/html5";
+@import "normalize/links";
+@import "normalize/typography";
+@import "normalize/embeds";
+@import "normalize/groups";
+@import "normalize/forms";
+@import "normalize/tables";
+
+@include font-face("PhonepadTwo", font-files("PhonepadTwo.ttf"));
+html, body {
+  height: 100%;
+  background: #fff;
+  color: #fff;
+  -webkit-user-select:none;
+  -webkit-touch-callout:none;
+	-webkit-tap-highlight-color:rgba(255,255,255,0);
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hcenter {
+  position: absolute;
+  left: 50%;
+  @include transform(translate3d(-50%, 0, 0));
+}
+
+.vcenter {
+  position: absolute;
+  top: 50%;
+  @include transform(translate3d(0, -50%, 0));
+}
+
+.hvcenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate3d(-50%, -50%, 0));
+}
+
+#suoping, #sp-content, #wx, #invite {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+#suoping {
+  background: {
+    image: url(../images/sybg.jpg);
+    size: cover;
+  }
+}
+
+#date-time {
+  position: relative;
+  top: 100px;
+  text-align: center;
+}
+
+.time {
+  font: {
+    family: "PhonepadTwo";
+  }
+}
+
+#sptime {
+  font: {
+    size: 160px;
+  }
+  margin: {
+    top: 0px;
+    bottom: 0px;
+  }
+}
+
+.date {
+  font: {
+    size: 32px;
+  }
+  margin: {
+    top: 10px;
+  }
+}
+
+#msg {
+  display: block;
+  float: right;
+  position: relative;
+  top: 22px;
+}
+
+#unlock {
+  position: absolute;
+  width: 464px;
+  height: 128px;
+  bottom: 10px;
+  right: 10px;
+}
+
+#unlock-light {
+  position: absolute;
+  top: 20px;
+  width: 60px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  @include border-radius(50%);
+  @include box-shadow(0px 0px 30px 18px rgba(255, 255, 255, 0.2));
+}
+
+// wx news list
+#wx {
+  background: #fff;
+  visibility: hidden;
+}
+
+#search {
+  width: 100%;
+  height: 88px;
+  top: 0;
+  background: #efeff4;
+}
+
+#search-bar {
+  display: block;
+}
+
+#msg-list {
+  position: relative;
+  width: 100%;
+  height: 128px;
+}
+
+#msg-touch {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #d2d4d6;
+  visibility: hidden;
+}
+
+#avatar {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  left: 20px;
+  top: 50%;
+  margin: {
+    top: -44px;
+  }
+  @include border-radius(15px);
+  background: #222;
+}
+
+#msg-num {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top:-16px;
+  right: -16px;
+  background: #ff0000;
+  @include border-radius(50%);
+  line-height: 32px;
+  text-align: center;
+  font: {
+    size: 16px;
+  }
+}
+
+#name {
+  position: absolute;
+  top: 20px;
+  left: 128px;
+  margin: 0;
+  color: #000000;
+  font: {
+    size: 32px;
+  }
+}
+
+#tag {
+  position: absolute;
+  bottom: 20px;
+  left: 128px;
+  margin: 0;
+  color: #9b9b9b;
+  font: {
+    size: 28px;
+  }
+}
+
+#list-time {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  margin: 0;
+  color: #9b9b9b;
+  font: {
+    size: 24px;
+  }
+}
+
+#line {
+  position: relative;
+  width: 620px;
+  height: 2px;
+  left: 20px;
+  top: -2px;
+  background: #d2d4d6;
+}
+
+#touch-up {
+  display: block;
+  position: absolute;
+  top: 232px;
+  left: 128px;
+}
+// wx news list end
+
+
+// invite start
+#invite {
+  background: {
+    image: url(../images/background.jpg);
+    size: cover;
+  }
+  overflow: hidden;
+}
+
+#logo {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 255px;
+}
+
+#content {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  top: 292px;
+}
+
+#content1{
+  margin-left: -190px;
+}
+
+#content2{
+  top: 88px;
+  margin-left: -112px;
+}
+
+#content3{
+  top: 152px;
+  margin-left: -258px;
+}
+
+#content4{
+  top: 194px;
+  margin-left: -149px;
+}
+
+#content5, #planet {
+  display: block;
+  position: absolute;
+}
+
+#content5 {
+  bottom: 0;
+  left: 50px;
+}
+
+#planet {
+  bottom: 72px;
+  left: 18px;
+}
+
+#content1, #content2, #content3, #content4, #meteor1, #meteor2, #meteor3, #light1, #light2, #star1, #star2, #bag {
+  display: block;
+  position: absolute;
+}
+
+#content1, #content2, #content3, #content4, #bag {
+  left: 50%;
+}
+
+#meteor1 {
+  top: -170px;
+  left: 480px;
+}
+
+#meteor2 {
+  top: 200px;
+  left: 640px;
+}
+
+#meteor3 {
+  top: 280px;
+  left: 640px;
+}
+
+
+
+#light1 {
+  top: -100px;
+  left: -50px;
+}
+
+#light2 {
+  top: -100px;
+  right: -50px;
+
+}
+
+#star1 {
+  top: 510px;
+  left: 380px;
+}
+
+#star2 {
+  top: 345px;
+  left: 150px;
+}
+// invite end
+
+
+#cankao {
+  position: absolute;
+  // width: 100%;
+  // height: 100%;
+  // z-index: -1;
+}
