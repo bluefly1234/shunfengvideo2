@@ -97,6 +97,7 @@ html, body {
   float: right;
   position: relative;
   top: 22px;
+  visibility: hidden;
 }
 
 #unlock {
@@ -234,6 +235,7 @@ html, body {
     size: cover;
   }
   overflow: hidden;
+  visibility: hidden;
 }
 
 #logo {

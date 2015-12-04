@@ -227,7 +227,7 @@ th {
 
 @font-face {
   font-family: "PhonepadTwo";
-  src: url('../../fonts/PhonepadTwo.ttf') format('truetype');
+  src: url('../fonts/PhonepadTwo.ttf') format('truetype');
 }
 html, body {
   height: 100%;
@@ -312,6 +312,7 @@ html, body {
   float: right;
   position: relative;
   top: 22px;
+  visibility: hidden;
 }
 
 #unlock {
@@ -441,6 +442,7 @@ html, body {
   background-image: url(../images/background.jpg);
   background-size: cover;
   overflow: hidden;
+  visibility: hidden;
 }
 
 #logo {
