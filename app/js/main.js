@@ -88,6 +88,7 @@ touch.on($("#sp-content"), 'swiperight', function(ev){
 // 首页动画结束
 
 // 微信列表动画
+TweenMax.set($('#dialouge'), {left: 640}); // 初始在右侧
 var wxShow = new TimelineMax({paused: true, onComplete: function() {
   TweenMax.to($('#touch-up'), 0.8, {y: '-=20', repeat: -1, yoyo: true});
 }});
@@ -95,10 +96,21 @@ var wxShow = new TimelineMax({paused: true, onComplete: function() {
 wxShow.from($('#wx'), 0.6, {scale: 1.5, ease: Circ.easeOut})
 touch.on($("#msg-list"), 'tap', function(ev){
   console.log(ev.type);
-  TweenMax.from($('#msg-touch'), 0.1, {autoAlpha: 0});
+  TweenMax.from($('#msg-touch'), 0.1, {autoAlpha: 0, onComplete: function() {
+    // 对话列表
+    TweenMax.to($('#dialouge'), 0.3, {left: 0});
+    TweenMax.to($('#wx'), 1, {left: -640, onComplete: function() {
+      TweenMax.set($('#wx'), {autoAlpha: 0}); //  结束后隐藏
+    }});
+    // 对话列表结束
+  }});
   TweenMax.set($('#touch-up'), {autoAlpha: 0});
+  TweenMax.set($('#dialouge'), {autoAlpha: 1});
+
 });
 // 微信列表结束
+
+
 
 // 快递包裹
 var showPackage = new TimelineMax({paused: true});

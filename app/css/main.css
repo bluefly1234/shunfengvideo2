@@ -275,7 +275,7 @@ html, body {
   transform: translate3d(-50%, -50%, 0);
 }
 
-#suoping, #sp-content, #wx, #invite {
+#suoping, #sp-content, #wx, #invite, #dialouge {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -533,6 +533,69 @@ html, body {
 #star2 {
   top: 345px;
   left: 150px;
+}
+
+#dialouge {
+  background: #ebebeb;
+  visibility: hidden;
+}
+
+#dialouge-time {
+  width: 88px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.2);
+  margin: 32px auto;
+  text-align: center;
+  line-height: 40px;
+  font-size: 21px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#video-msg {
+  position: relative;
+  width: 100%;
+  height: 224px;
+}
+
+#avatar2 {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  left: 20px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  background: #222;
+}
+
+#name2 {
+  position: absolute;
+  left: 138px;
+  margin: 0;
+  color: #7c7c7c;
+  font-size: 18px;
+}
+
+#video-icon {
+  display: block;
+  position: absolute;
+  left: 118px;
+  bottom: 0;
+}
+
+#play-btn {
+  display: block;
+  position: absolute;
+  left: 168px;
+  bottom: 20px;
+}
+
+#bottom-toolbar {
+  display: block;
+  position: absolute;
+  bottom: 0;
 }
 
 #cankao {
