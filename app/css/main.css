@@ -275,7 +275,7 @@ html, body {
   transform: translate3d(-50%, -50%, 0);
 }
 
-#suoping, #sp-content, #wx, #invite, #dialouge {
+#suoping, #sp-content, #wx, #invite, #dialouge, #video-container {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -596,6 +596,17 @@ html, body {
   display: block;
   position: absolute;
   bottom: 0;
+}
+
+#video-container {
+  visibility: hidden;
+}
+
+#poster {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 #cankao {

@@ -83,7 +83,7 @@ touch.on($("#sp-content"), 'swiperight', function(ev){
   console.log(ev.type);
 	TweenMax.set($('#wx'), {autoAlpha: 1});
   spSlideout.play();
-  // $('#video').attr('preload','auto');
+  $('#video').attr('preload','auto');
 });
 // 首页动画结束
 
@@ -110,58 +110,37 @@ touch.on($("#msg-list"), 'tap', function(ev){
 });
 // 微信列表结束
 
-
-
-// 快递包裹
-var showPackage = new TimelineMax({paused: true});
-var hidePackage = new TimelineMax({paused: true, onComplete: function() {
-  TweenMax.set($('#package-content'), {autoAlpha: 0});
-  showVideo.play();
-}});
-var showVideo = new TimelineMax({paused: true});
-showPackage.from($('#package'), 0.4, {scale: 1.5, ease: Circ.easeOut}, "-=0.1")
-            .from($('#bag'), 0.8, {y: -400, autoAlpha: 0, ease: Bounce.easeOut})
-            .from($('#reminder'), 0.5, {autoAlpha: 0, ease: Power1.easeIn}, '-=0.8')
-            .from($('#tap-guide'), 0.5, {autoAlpha: 0, ease: Power1.easeIn})
-            .to($('#tap-guide'), 0.5, {y: '+=30', ease: Power0.easeNone, repeat: -1, yoyo: true}, '-=0.5');
-
-hidePackage.to($('#bag'), 0.8, {x: 640, autoAlpha: 0, ease: Back.easeIn.config(1.7)})
-            .to([$('#tap-guide'), $('#reminder')], 0.5, {autoAlpha: 0}, '-=0.5');
-
-touch.on($("#bag"), 'tap', function(ev){
-  console.log(ev.type);
-  hidePackage.play();
-});
-
-showVideo.from($('#video-container'), 0.3, {x: -640, autoAlpha: 0});
-
+// 视频==========================================================================
+TweenMax.set($('#video-container'), {autoAlpha: 0, scale: 0});
 var video = $('#video')[0];
 $('#video').attr("webkit-playsinline","webkit-playsinline");
 touch.on($("#play-btn"), 'tap', function(ev){
   console.log(ev.type);
-  video.play();
-  // 视频播放隐藏播放按钮
-  function initVideo(){
-    if (video.currentTime){
-      console.log('视频开始播放');
-      TweenMax.to($('#play-btn'), 0.5, {autoAlpha: 0, scale: 2});
-      TweenMax.set($('#poster'), {autoAlpha: 0});
-      video.removeEventListener("timeupdate", initVideo, false);
+  TweenMax.to($('#video-container'), 0.6, {autoAlpha: 1, scale: 1, ease: Back.easeOut.config(1.7), transformOrigin:"250 225", onComplete: function() {
+    TweenMax.set($('#dialouge'), {autoAlpha: 0});
+    video.play();
+    function initVideo(){
+      if (video.currentTime){
+        console.log('视频开始播放');
+        TweenMax.set($('#poster'), {autoAlpha: 0});
+        video.removeEventListener("timeupdate", initVideo, false);
+      }
     }
-  }
-  video.addEventListener("timeupdate", initVideo, false);
+    video.addEventListener("timeupdate", initVideo, false);
+  }});
+
 });
 
 //视频播放完之后隐藏视频及结束按钮
 video.addEventListener("ended",function(evt) {
   	console.log("video has ended");
-		TweenMax.set($('#package'), {autoAlpha: 0});
+		TweenMax.set($('#video-container'), {autoAlpha: 0});
 		TweenMax.set($('#invite'), {autoAlpha: 1});
 		showInvite.play();
 
 });
+// 视频结束======================================================================
 
-// 快递包裹结束
 
 // 邀请页========================================================================
 TweenMax.set($('#invite'), {autoAlpha: 0});
