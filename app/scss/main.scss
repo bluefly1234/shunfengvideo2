@@ -59,6 +59,7 @@ html, body {
     image: url(../images/sybg.jpg);
     size: cover;
   }
+  z-index: 40;
 }
 
 #date-time {
@@ -106,6 +107,7 @@ html, body {
   height: 128px;
   bottom: 10px;
   right: 10px;
+  visibility: hidden;
 }
 
 #unlock-light {
@@ -122,6 +124,7 @@ html, body {
 #wx {
   background: #fff;
   visibility: hidden;
+  z-index: 10;
 }
 
 #search {
@@ -238,6 +241,25 @@ html, body {
   visibility: hidden;
 }
 
+#music-control {
+  position: absolute;
+	z-index: 999;
+  top: 0;
+  right: 0;
+
+  width: 58px;
+  height: 58px;
+  margin: 20px;
+}
+
+#music-control-main, .music-control-icon {
+  position: absolute;
+}
+
+.music-control-icon {
+  display: block;
+}
+
 #logo {
   display: block;
   position: absolute;
@@ -338,6 +360,7 @@ html, body {
 #dialouge {
   background: #ebebeb;
   visibility: hidden;
+  z-index: 20;
 }
 
 #dialouge-time {
@@ -402,6 +425,7 @@ html, body {
 
 #video-container {
   visibility: hidden;
+  z-index: 30;
 }
 #poster {
   display: block;

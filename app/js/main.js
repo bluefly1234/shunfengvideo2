@@ -143,10 +143,48 @@ video.addEventListener("ended",function(evt) {
 
 
 // 邀请页========================================================================
+// music-control------------------------------------------------------------------------------------------------------
+var musicCtrl = new TimelineMax({repeat: -1, paused:true });
+var musicRotation = new TimelineMax({repeat: -1, paused:true});
+musicCtrl.to($(".music-control-icon"), 2, {rotation: 360, ease: Power0.easeNone});
+musicRotation.to($(".music-control-icon:nth(1)"), 0.5, {x: "-=20",y: "-=20", autoAlpha:0, ease: Power0.easeNone})
+              .to($(".music-control-icon:nth(2)"), 0.5, {x: "+=20", y: "-=20", autoAlpha:0, ease: Power0.easeNone})
+              .to($(".music-control-icon:nth(3)"), 0.5, {x: "-=20", y: "+=20", autoAlpha:0, ease: Power0.easeNone})
+              .to($(".music-control-icon:nth(4)"), 0.5, {x: "+=20", y: "+=20", autoAlpha:0, ease: Power0.easeNone})
+// 音乐初始化
+var bgAud = $("#bg-music")[0];
+// 音乐控制
+$("#music-control").click(function(){
+  if(bgAud.paused){
+    bgAud.play();
+    musicCtrl.play();
+    musicRotation.play();
+  }else{
+    bgAud.pause();
+    musicCtrl.pause();
+    musicRotation.pause();
+  }
+})
+// music-control End----------------------------------------------------------------------------------------------------------
+
+
 TweenMax.set($('#invite'), {autoAlpha: 0});
 var showInvite = new TimelineMax({paused: true, onComplete: function() {
 	scaleLight.play();
-}});
+  }, onStart: function() {
+    bgAud.play();
+    function initAud(){
+      if (bgAud.currentTime){
+        console.log("背景音乐开始播放");
+        musicCtrl.play();
+        musicRotation.play();
+        bgAud.removeEventListener("timeupdate", initAud, false); //只执行一次，防止控制按钮动画无法暂停
+      }
+    }
+
+    bgAud.addEventListener("timeupdate", initAud, false);
+  }});
+
 var showMeteor = new TimelineMax({repeat: -1, repeatDelay: 0.5, paused: true});
 var scaleLight = new TimelineMax({paused: true, onComplete: function() {
 	showLight.play();
