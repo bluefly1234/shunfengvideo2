@@ -163,6 +163,8 @@ html, body {
   }
   @include border-radius(15px);
   background: #222;
+  @include background-image(inline-image('avatar.jpg'));
+  @include background-size(cover);
 }
 
 #msg-num {
@@ -387,6 +389,8 @@ html, body {
   left: 20px;
   @include border-radius(15px);
   background: #222;
+  @include background-image(inline-image('avatar.jpg'));
+  @include background-size(cover);
 }
 
 #name2 {
