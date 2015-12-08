@@ -112,7 +112,6 @@
         <img src="images/logo.png" alt="" id="logo" >
         <div id="content">
           <img src="images/content1.png" alt="" id="content1" >
-          <img src="images/content2.png" alt="" id="content2" >
           <img src="images/content3.png" alt="" id="content3" >
           <img src="images/content4.png" alt="" id="content4" >
         </div>

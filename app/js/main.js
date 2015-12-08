@@ -24,7 +24,7 @@ if(curMinute<10){
 }
 
 var realWeek;
-switch(curDay)
+switch(curWeek)
 {
 case 0:realWeek="星期日";break;
 case 1:realWeek="星期一";break;
@@ -206,7 +206,7 @@ showMeteor.to($('#meteor1'), 1.2, {left: -170, top: 480})
 					.to($('#meteor2'), 1.2, {left: -170, top: 840}, "-=0.3")
 					.to($('#meteor3'), 1.2, {left: -170, top: 920}, "-=0.4")
 showInvite.from($('#logo'), 0.5, {autoAlpha: 0})
-					.staggerFrom([$('#content1'), $('#content2'), $('#content3'), $('#content4')], 0.8, {autoAlpha: 0, y: '+=20'}, 0.25)
+					.staggerFrom([$('#content1'), $('#content3'), $('#content4')], 0.8, {autoAlpha: 0, y: '+=20'}, 0.25)
 					.from($('#content5'), 0.6, {x: 640, ease: Back.easeOut.config(1.7)}, '-=0.3');
 
 
