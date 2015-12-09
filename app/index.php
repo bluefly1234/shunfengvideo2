@@ -106,9 +106,7 @@
           <img src="images/music_icon.png" alt="" class="music-control-icon hvcenter">
         </div><!--/music-control-->
 
-        <img src="images/meteor.png" id="meteor1" />
-        <img src="images/meteor.png" id="meteor2" />
-        <img src="images/meteor.png" id="meteor3" />
+        
         <img src="images/logo.png" alt="" id="logo" >
         <div id="content">
           <img src="images/content1.png" alt="" id="content1" >
@@ -158,10 +156,10 @@ $viewid = $obj->doView(); // 记录访问
 
 // 分享数据
 $sharedata = array(
-	'img' => 'http://'.$_SERVER['HTTP_HOST'].'/video2/images/icon.jpg',		// 分享图标地址 页面不让分享的时候 无需
+	'img' => 'http://'.$_SERVER['HTTP_HOST'].'/video2/images/icon.jpg?111',		// 分享图标地址 页面不让分享的时候 无需
     'url' => 'http://'.$_SERVER['HTTP_HOST'].'/video2/index.php',	// 分享图标地址 页面不让分享的时候 无需
-	'title' =>	"您有一条来自神秘大咖的未读消息",	// 分享图标地址 页面不让分享的时候 无需
-	'desc' =>	"您有一条来自神秘大咖的未读消息",	// 分享图标地址 页面不让分享的时候 无需
+	'title' =>	"主要看气质，神秘女大咖颜值爆表",	// 分享图标地址 页面不让分享的时候 无需
+	'desc' =>	"主要看气质，神秘女大咖颜值爆表",	// 分享图标地址 页面不让分享的时候 无需
 );
 $obj->outputShare($sharedata); // 输出分享
 ?>

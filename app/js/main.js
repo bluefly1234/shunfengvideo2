@@ -188,7 +188,7 @@ var showInvite = new TimelineMax({paused: true, onComplete: function() {
 var showMeteor = new TimelineMax({repeat: -1, repeatDelay: 0.5, paused: true});
 var scaleLight = new TimelineMax({paused: true, onComplete: function() {
 	showLight.play();
-	showMeteor.play();
+
 	starBlink.play();
 }});
 var showLight = new TimelineMax({repeat: -1, yoyo: true, paused: true});
@@ -202,9 +202,7 @@ scaleLight.from($('#light1'), 0.5, {scale: 0, autoAlpha:0, transformOrigin:"left
 showLight.to($('#light1'), 1.5, {rotation: 25,  transformOrigin:"left top", ease: Power1.easeInOut})
 					.addLabel("start", "-=1.5")
 					.to($('#light2'), 1.5, {rotation: -25,  transformOrigin:"right top", ease: Power1.easeInOut}, "start")
-showMeteor.to($('#meteor1'), 1.2, {left: -170, top: 480})
-					.to($('#meteor2'), 1.2, {left: -170, top: 840}, "-=0.3")
-					.to($('#meteor3'), 1.2, {left: -170, top: 920}, "-=0.4")
+
 showInvite.from($('#logo'), 0.5, {autoAlpha: 0})
 					.staggerFrom([$('#content1'), $('#content3'), $('#content4')], 0.8, {autoAlpha: 0, y: '+=20'}, 0.25)
 					.from($('#content5'), 0.6, {x: 640, ease: Back.easeOut.config(1.7)}, '-=0.3');
