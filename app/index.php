@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -95,7 +98,7 @@
       </div>
 
       <div id="invite">
-        <audio src="media/bgmusic.mp3" id="bg-music" preload="auto" loop="loop">
+        <audio src="media/bgmusic.mp3" id="bg-music" preload="auto" loop>
         </audio>
         <div id="music-control">
           <img src="images/music_bg.png" alt="" id="music-control-main">
@@ -158,14 +161,12 @@ $viewid = $obj->doView(); // 记录访问
 $sharedata = array(
 	'img' => 'http://'.$_SERVER['HTTP_HOST'].'/video2/images/icon.jpg?111',		// 分享图标地址 页面不让分享的时候 无需
     'url' => 'http://'.$_SERVER['HTTP_HOST'].'/video2/index.php',	// 分享图标地址 页面不让分享的时候 无需
-	'title' =>	"主要看气质，神秘女大咖颜值爆表",	// 分享图标地址 页面不让分享的时候 无需
-	'desc' =>	"主要看气质，神秘女大咖颜值爆表",	// 分享图标地址 页面不让分享的时候 无需
+	'title' =>	"主要看气质，神秘女神颜值爆表",	// 分享图标地址 页面不让分享的时候 无需
+	'desc' =>	"您的关注，会不会成为小伙伴们继续前进的动力，我们拭目以待",	// 分享图标地址 页面不让分享的时候 无需
 );
 $obj->outputShare($sharedata); // 输出分享
 ?>
-<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-<script>
-var scr=document.body.clientWidth.toString()+'*'+document.body.clientHeight.toString()+'-'+window.screen.width.toString()+'*'+window.screen.height.toString()+'-'+window.screen.availWidth.toString()+'*'+window.screen.availHeight.toString();
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>您的关注，会不会成为小伙伴们继续前进的动力，我们拭目以待。t.toString()+'-'+window.screen.width.toString()+'*'+window.screen.height.toString()+'-'+window.screen.availWidth.toString()+'*'+window.screen.availHeight.toString();
 $.get('f1data/doView.php?id=<?php echo $viewid;?>&screen='+scr, function (data){} );
 </script>
 <?php
